@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flight-booking-api-deployment
+  labels:
+    app: flight-booking-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flight-booking-api
+  template:
+    metadata:
+      labels:
+        app: flight-booking-api
+    spec:
+      containers:
+        - name: flight-booking-api
+          image: jamsheerply/flight-booking-api:v1.2
+          imagePullPolicy: Always # Ensure Kubernetes always pulls the latest image
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: flight-booking-api-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flight-booking-api
+spec:
+  selector:
+    app: flight-booking-api
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: ClusterIP

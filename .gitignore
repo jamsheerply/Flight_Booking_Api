@@ -1,0 +1,15 @@
+# npm
+node_modules
+
+# Environment variables
+.env
+
+#error log
+logs/
+*.log
+
+#config file
+manifests/flight-booking-api-config.yaml
+
+
+!.env.sample

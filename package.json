@@ -1,0 +1,23 @@
+{
+  "name": "flightbookingapi",
+  "version": "1.0.0",
+  "description": "flight book api with amadeus api integration with OAuth",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "author": "jamsheer m c",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.7",
+    "winston": "^3.17.0"
+  }
+}
