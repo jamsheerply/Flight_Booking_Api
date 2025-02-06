@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/user.model");
-const { JWT_SECRECT } = require("../config/config");
+const { JWT_SECRET } = require("../config/config");
 
 const jwtMiddleware = async (req, res, next) => {
   try {
@@ -21,7 +21,7 @@ const jwtMiddleware = async (req, res, next) => {
       });
     }
 
-    const decoded = jwt.verify(token, JWT_SECRECT);
+    const decoded = jwt.verify(token, JWT_SECRET);
     if (!decoded) {
       return res.status(401).json({
         status: false,

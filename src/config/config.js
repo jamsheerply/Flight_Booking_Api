@@ -1,19 +1,32 @@
-require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config();
 
-exports.PORT = process.env.PORT;
+const PORT = process.env.PORT;
 
-exports.DB_URL = process.env.DB_URL;
+const DB_URL = process.env.DB_URL;
 
-exports.JWT_SECRECT = process.env.JWT_SECRECT;
+const JWT_SECRET = process.env.JWT_SECRET;
 
-exports.AMADEUS_TOKEN_URL = process.env.AMADEUS_TOKEN_URL;
+const AMADEUS_TOKEN_URL = process.env.AMADEUS_TOKEN_URL;
 
-exports.AMADEUS_CLIENT_ID = process.env.AMADEUS_CLIENT_ID;
+const AMADEUS_CLIENT_ID = process.env.AMADEUS_CLIENT_ID;
 
-exports.AMADEUS_CLIENT_SECRET = process.env.AMADEUS_CLIENT_SECRET;
+const AMADEUS_CLIENT_SECRET = process.env.AMADEUS_CLIENT_SECRET;
 
-exports.AMADEUS_FLIGHT_URL = process.env.AMADEUS_FLIGHT_URL;
+const AMADEUS_FLIGHT_URL = process.env.AMADEUS_FLIGHT_URL;
 
-exports.AMADEUS_BOOKING_URL = process.env.AMADEUS_BOOKING_URL;
+const AMADEUS_BOOKING_URL = process.env.AMADEUS_BOOKING_URL;
 
-exports.NODE_ENV = process.env.NODE_ENV;
+const NODE_ENV = process.env.NODE_ENV;
+
+module.exports = {
+  PORT,
+  DB_URL,
+  JWT_SECRET,
+  AMADEUS_TOKEN_URL,
+  AMADEUS_CLIENT_ID,
+  AMADEUS_CLIENT_SECRET,
+  AMADEUS_FLIGHT_URL,
+  AMADEUS_BOOKING_URL,
+  NODE_ENV,
+};

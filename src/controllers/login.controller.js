@@ -1,7 +1,8 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/user.model");
 const jwt = require("jsonwebtoken");
-const { JWT_SECRECT } = require("../config/config");
+const { JWT_SECRET } = require("../config/config");
+require("dotenv").config();
 
 const loginController = async (req, res) => {
   try {
@@ -25,8 +26,8 @@ const loginController = async (req, res) => {
         .status(401)
         .json({ success: false, message: "Invalid credentials" });
     }
-    console.log("JWT_SECRECT", JWT_SECRECT);
-    const token = jwt.sign({ _id: user?._id, name: user?.name }, JWT_SECRECT, {
+
+    const token = jwt.sign({ _id: user?._id, name: user?.name }, JWT_SECRET, {
       expiresIn: "1d",
     });
 

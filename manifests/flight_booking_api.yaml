@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: flight-booking-api
-          image: jamsheerply/flight-booking-api:v1.2
-          imagePullPolicy: Always # Ensure Kubernetes always pulls the latest image
+          image: jamsheerply/flight-booking-api:v2.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           envFrom:
